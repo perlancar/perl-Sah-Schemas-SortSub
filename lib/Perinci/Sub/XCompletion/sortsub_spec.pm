@@ -1,6 +1,8 @@
 package Perinci::Sub::XCompletion::sortsub_spec;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -30,7 +32,11 @@ sub gen_completion {
                 sub {
                     my $mods = Module::List::Tiny::list_modules("Sort::Sub::", {list_modules=>1});
                     my @words;
-                    for (sort keys %$mods) { s/\ASort::Sub:://; push @words, $_, "\$$_" }
+                    for (sort keys %$mods) {
+                        s/\ASort::Sub:://;
+                        push @words, $_     if $cargs{offer_unprefixed} // 1;
+                        push @words, "\$$_" if $cargs{offer_dollar_prefixed};
+                    }
                     \@words;
                 },
                 ["", "<>", "<i>", "<r>", "<ir>"],
@@ -43,3 +49,13 @@ sub gen_completion {
 # ABSTRACT: Generate completion for cryptoexchange code/name/safename
 
 =cut
+
+=head1 ARGUMENTS
+
+=head2 offer_dollar_prefixed
+
+Bool. Default false.
+
+=head2 offer_unprefixed
+
+Bool. Default true.
