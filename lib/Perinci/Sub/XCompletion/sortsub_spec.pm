@@ -46,9 +46,7 @@ sub gen_completion {
 }
 
 1;
-# ABSTRACT: Generate completion for cryptoexchange code/name/safename
-
-=cut
+# ABSTRACT: Generate completion for Sort::Sub spec
 
 =head1 ARGUMENTS
 
