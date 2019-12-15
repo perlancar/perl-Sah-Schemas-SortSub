@@ -33,7 +33,7 @@ sub gen_completion {
                     for (sort keys %$mods) { s/\ASort::Sub:://; push @words, $_, "\$$_" }
                     \@words;
                 },
-                ["", ["<>", "<i>", "<r>", "<ir>"]],
+                ["", "<>", "<i>", "<r>", "<ir>"],
             ],
         );
     };

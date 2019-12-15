@@ -7,7 +7,7 @@ package Sah::Schema::sortsub::spec;
 
 our $schema = ['str', {
     summary => 'Sort::Sub specification string (name + optional <i,r>)',
-    match => qr/\A\w+(?:<[ir]+>)?\z/,
+    match => qr/\A\w+(?:<[ir]*>)?\z/,
     'x.completion' => ['sortsub_spec'],
 }, {}];
 
