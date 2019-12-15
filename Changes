@@ -1,3 +1,10 @@
+0.002   2019-12-15  Released-By: PERLANCAR; Urgency: low
+
+	- No functional changes.
+
+	- Fix Abstract & POD of Perinci::Sub::XCompletion::sortsub_spec.
+
+
 1.2.4.2  2018-01-14  Released-By: PERLANCAR
 
         - [build] Rebuild with updated DZP:Sah::Schemas to add prereqs to
